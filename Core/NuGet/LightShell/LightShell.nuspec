@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>LightShell</id>
+    <version>0.5.0.2</version>
+    <title>LightShell UI</title>
+    <authors>Adam Marszałek</authors>
+    <owners>Adam Marszałek</owners>
+    <licenseUrl>https://github.com/sceeter89/LightShell/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/sceeter89/LightShell</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/sceeter89/LightShell/master/Core/LightShell/Assets/LightShell.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>LightShell is an event-based, plugin oriented shell that helps making UI applications with less effort.</description>
+    <releaseNotes>Initial release of LightShell.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>gui-shell lightshell</tags>
+	<dependencies>
+		<group targetFramework=".NETFramework4.5">
+			<dependency id="mvvmlightlibs" version="5.2.0.0" />
+			<dependency id="Autofac" version="3.5.2" />
+		</group>
+	</dependencies>
+  </metadata>
+</package>

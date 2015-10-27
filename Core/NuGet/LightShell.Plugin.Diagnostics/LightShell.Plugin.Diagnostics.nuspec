@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>LightShell.Plugin.Diagnostics</id>
+    <version>0.5.0.3</version>
+    <title>LightShell Diagnostics Plugin</title>
+    <authors>Adam Marszałek</authors>
+    <owners>Adam Marszałek</owners>
+    <licenseUrl>https://github.com/sceeter89/LightShell/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/sceeter89/LightShell</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/sceeter89/LightShell/master/Core/LightShell/Assets/LightShell.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>LighShell plugins that add various diagnostic functionalities. Plugins' list, log's export to name few.</description>
+    <releaseNotes>Initial release of LightShell Plugin API.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>gui-shell lightshell lightshell-api lightshell-plugin</tags>
+  </metadata>
+</package>
