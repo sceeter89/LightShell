@@ -14,5 +14,11 @@
     <releaseNotes>Initial release of LightShell Plugin API.</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>gui-shell lightshell lightshell-api lightshell-plugin</tags>
+	
+	<dependencies>
+		<group targetFramework=".NETFramework4.5">
+			<dependency id="lightshell" version="0.5" />
+		</group>
+	</dependencies>
   </metadata>
 </package>

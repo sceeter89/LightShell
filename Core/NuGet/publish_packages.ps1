@@ -1,5 +1,6 @@
  param (
-    [Parameter(Mandatory=$true)][string]$version
+    [Parameter(Mandatory=$true)][string]$version,
+	[bool]$skipUpload=$false
  )
 
 $cache_dir = "publish_cache"
@@ -13,6 +14,10 @@ New-Item $cache_dir -type directory
 $nuspecs = Get-Childitem "." -Recurse | where {$_.extension -eq ".nuspec"}
 foreach ($spec_path in $nuspecs) {
 	nuget pack -OutputDirectory $cache_dir -Version $version $spec_path.FullName
+}
+
+if ($skipUpload){
+	Exit
 }
 
 $packages = Get-Childitem $cache_dir | where {$_.extension -eq ".nupkg"}
