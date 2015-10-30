@@ -67,7 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\LightShell\Properties\AssemblyVersion.cs">
+    <Compile Include="..\LightShell\Properties\AssemblyVersion.cs">
       <Link>AssemblyVersion.cs</Link>
     </Compile>
     <Compile Include="IMicroservice.cs" />

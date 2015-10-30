@@ -107,7 +107,10 @@ namespace LightShell.ViewModel
          }
 
          CustomPropertyPane.Content = _customDocumentPaneProperties[documentPane];
-         PropertyPanes.Add(CustomPropertyPane);
+
+         if (PropertyPanes.Contains(CustomPropertyPane) == false)
+            PropertyPanes.Add(CustomPropertyPane);
+
          FocusPropertyPane(CustomPropertyPane);
       }
 
