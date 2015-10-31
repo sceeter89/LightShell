@@ -78,8 +78,8 @@ namespace LightShell.ViewModel
             }
             DispatcherHelper.CheckBeginInvokeOnUI(() =>
             {
-               foreach (var t in _menuTabsMap.Values.Where(x => MenuTabs.Contains(x) == false).ToList())
-                  MenuTabs.Add(t);
+               if (MenuTabs.Contains(tab) == false)
+                  MenuTabs.Add(tab);
 
                SelectedTab = MenuTabs[0];
                tab.Groups.Add(newMenuGroup);

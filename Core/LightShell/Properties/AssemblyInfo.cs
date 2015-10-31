@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("Jira Client")]
-[assembly: AssemblyDescription("Application made to ease external operations on JIRA.")]
-[assembly: AssemblyProduct("Jira Client")]
+[assembly: AssemblyTitle("LightShell")]
+[assembly: AssemblyDescription("Library containing set of tools that facilitates creation of GUI applications.")]
+[assembly: AssemblyProduct("LightShell UI")]
 

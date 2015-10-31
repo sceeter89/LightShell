@@ -11,7 +11,7 @@
     <iconUrl>https://raw.githubusercontent.com/sceeter89/LightShell/master/Core/LightShell/Assets/LightShell.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>LightShell is an event-based, plugin oriented shell that helps making UI applications with less effort.</description>
-    <releaseNotes>Initial release of LightShell.</releaseNotes>
+    <releaseNotes>https://github.com/sceeter89/LightShell/releases</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>gui-shell lightshell</tags>
 	<dependencies>
