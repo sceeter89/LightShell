@@ -48,18 +48,6 @@
     <Reference Include="GalaSoft.MvvmLight.Platform">
       <HintPath>Libs\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="LightShell">
-      <HintPath>Libs\LightShell.dll</HintPath>
-    </Reference>
-    <Reference Include="LightShell.Api">
-      <HintPath>Libs\LightShell.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="LightShell.Messaging">
-      <HintPath>Libs\LightShell.Messaging.dll</HintPath>
-    </Reference>
-    <Reference Include="LightShell.Plugin.Diagnostics">
-      <HintPath>Libs\LightShell.Plugin.Diagnostics.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -158,6 +146,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\LightShell.Api\LightShell.Api.csproj">
+      <Project>{add8f9a1-dae9-4cc2-8b5d-a5b36f4e7d98}</Project>
+      <Name>LightShell.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\LightShell.Messaging\LightShell.Messaging.csproj">
+      <Project>{7dbbde05-ef7f-4fb3-b4d5-540a03e4b9b4}</Project>
+      <Name>LightShell.Messaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\LightShell.Plugin.Diagnostics\LightShell.Plugin.Diagnostics.csproj">
+      <Project>{18cbf1be-5c17-460d-8edd-2b793afd9763}</Project>
+      <Name>LightShell.Plugin.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\LightShell\LightShell.csproj">
+      <Project>{579b8082-42b3-4c67-943f-97bddb2ffc62}</Project>
+      <Name>LightShell</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

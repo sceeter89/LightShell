@@ -4,7 +4,9 @@ using LightShell.Api;
 using LightShell.Messaging.Api;
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 
 namespace LightShell.Plugin.Diagnostics.Controls
@@ -66,7 +68,7 @@ namespace LightShell.Plugin.Diagnostics.Controls
          });
       }
 
-      public class EventStats : ViewModelBase
+      public class EventStats : INotifyPropertyChanged
       {
          public EventStats(string eventName, string assemblyName)
          {
@@ -75,6 +77,8 @@ namespace LightShell.Plugin.Diagnostics.Controls
          }
 
          private long _hits;
+
+         public event PropertyChangedEventHandler PropertyChanged;
 
          public long Hits
          {
@@ -87,6 +91,12 @@ namespace LightShell.Plugin.Diagnostics.Controls
                _hits = value;
                RaisePropertyChanged();
             }
+         }
+
+         private void RaisePropertyChanged([CallerMemberName]string memberName = null)
+         {
+            if (PropertyChanged != null)
+               PropertyChanged(this, new PropertyChangedEventArgs(memberName));
          }
 
          public string EventName { get; private set; }
