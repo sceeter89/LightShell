@@ -47,3 +47,7 @@ All we have to do is to create new class called `MyPluginDefinition` and do two 
       }
    }
 ```
+
+## Working example
+
+JIRA Client: https://github.com/sceeter89/jira-client is an application from which LightShell originates. Currently it integrates with LightShell via NuGet package so it is good point where you can gather inspiration from if you would like to get started.
