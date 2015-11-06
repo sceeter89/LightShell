@@ -1,13 +1,5 @@
-using System.Collections.ObjectModel;
-using Telerik.Windows.Controls;
-using LightShell.Api.Messages.Navigation;
 using System.Reflection;
 using LightShell.Messaging.Api;
-using System;
-using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
-using System.Linq;
 using LightShell.InternalMessages.UI;
 using GalaSoft.MvvmLight.Threading;
 using System.Windows.Input;
@@ -38,8 +30,7 @@ namespace LightShell.ViewModel
             return string.Format("LightShell - {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString(3));
          }
       }
-
-
+      
       public void Handle(UpdateUiBootstrapMessage message)
       {
          DispatcherHelper.CheckBeginInvokeOnUI(() => BusinessMessage = message.Message);
@@ -58,7 +49,6 @@ namespace LightShell.ViewModel
       {
          _messageBus.Send(new ViewModelInitializedMessage(this.GetType()));
       }
-
 
       public bool IsBusy
       {
@@ -87,8 +77,6 @@ namespace LightShell.ViewModel
       }
       private bool _isBusy;
       private string _businessMessage;
-
-
 
       public InputBindingCollection InputBindings { get; internal set; }
    }

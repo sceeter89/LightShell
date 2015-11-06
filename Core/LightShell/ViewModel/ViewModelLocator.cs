@@ -1,7 +1,6 @@
 using Autofac;
 using System.Reflection;
 using LightShell.Messaging;
-using LightShell.Api;
 using LightShell.Messaging.Api;
 using GalaSoft.MvvmLight;
 

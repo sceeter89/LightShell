@@ -11,7 +11,6 @@ using Telerik.Windows.Controls;
 namespace LightShell.ViewModel
 {
    internal class DockingAreaViewModel : GalaSoft.MvvmLight.ViewModelBase,
-      ICoreViewModel,
       IHandleMessage<ShowDocumentPaneMessage>,
       IHandleMessage<ShowPropertyPaneMessage>,
       IHandleMessage<RemoveDocumentPaneMessage>,
@@ -226,11 +225,6 @@ namespace LightShell.ViewModel
 
          if (entry.Any())
             RemovePropertyPaneByKey(entry.First().Key);
-      }
-
-      public void OnControlInitialized()
-      {
-         throw new NotImplementedException();
       }
 
       public int SelectedPropertyPaneIndex
