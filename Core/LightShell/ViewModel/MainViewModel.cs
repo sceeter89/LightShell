@@ -3,13 +3,16 @@ using LightShell.Messaging.Api;
 using LightShell.InternalMessages.UI;
 using GalaSoft.MvvmLight.Threading;
 using System.Windows.Input;
+using System;
+using LightShell.Api.Messages.Actions;
 
 namespace LightShell.ViewModel
 {
    internal class MainViewModel : GalaSoft.MvvmLight.ViewModelBase,
       ICoreViewModel,
       IHandleMessage<UpdateUiBootstrapMessage>,
-      IHandleMessage<ApplicationLoadedMessage>
+      IHandleMessage<ApplicationLoadedMessage>,
+      IHandleMessage<RegisterGlobalShortcutMessage>
    {
       private readonly IMessageBus _messageBus;
 
@@ -30,7 +33,7 @@ namespace LightShell.ViewModel
             return string.Format("LightShell - {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString(3));
          }
       }
-      
+
       public void Handle(UpdateUiBootstrapMessage message)
       {
          DispatcherHelper.CheckBeginInvokeOnUI(() => BusinessMessage = message.Message);
@@ -48,6 +51,13 @@ namespace LightShell.ViewModel
       public void OnControlInitialized()
       {
          _messageBus.Send(new ViewModelInitializedMessage(this.GetType()));
+      }
+
+      public void Handle(RegisterGlobalShortcutMessage message)
+      {
+         InputBindings.Add(
+            new InputBinding(message.Command,
+            new KeyGesture(message.Key, message.Modifiers)));
       }
 
       public bool IsBusy

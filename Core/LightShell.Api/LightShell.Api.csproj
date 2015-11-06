@@ -65,6 +65,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\LightShell\Properties\AssemblyVersion.cs">
@@ -74,6 +75,7 @@
     <Compile Include="ISearchableField.cs" />
     <Compile Include="LogLevel.cs" />
     <Compile Include="Messages\Actions\LogMessage.cs" />
+    <Compile Include="Messages\Actions\RegisterGlobalShortcutMessage.cs" />
     <Compile Include="Messages\IO\Exports\SaveLogOutputToFileMessage.cs" />
     <Compile Include="Messages\IO\Plugins\NewPluginFoundMessage.cs" />
     <Compile Include="Messages\Navigation\ClearDocumentPanesMessage.cs" />
