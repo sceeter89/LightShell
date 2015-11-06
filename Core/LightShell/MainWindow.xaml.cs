@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using Telerik.Windows.Controls;
 using LightShell.ViewModel;
-using System.Linq;
 using GalaSoft.MvvmLight.Threading;
 
 namespace LightShell
@@ -18,19 +17,13 @@ namespace LightShell
          StyleManager.ApplicationTheme = new Windows8Theme();
          InitializeComponent();
          Loaded += OnMainWindowLoaded;
+
+         (DataContext as MainViewModel).InputBindings = this.InputBindings;
       }
 
       private void OnMainWindowLoaded(object sender, RoutedEventArgs e)
       {
          (DataContext as ICoreViewModel).OnControlInitialized();
-      }
-
-      private void PaneClosePreview(object sender, Telerik.Windows.Controls.Docking.StateChangeEventArgs e)
-      {
-         if (e == null || e.Panes == null || e.Panes.Any() == false || e.Panes.Count() > 0)
-            return;
-
-         (DataContext as MainViewModel).PaneCloseAttempt(e.Panes.First());
       }
    }
 }

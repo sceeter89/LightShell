@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="LightShell.Controls.DockingArea"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LightShell.Controls"
+             mc:Ignorable="d" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding Source={StaticResource Locator}, Path=DockingArea}">
+   <telerik:RadDocking PreviewClose="PaneClosePreview">
+      <telerik:RadDocking.DocumentHost>
+         <telerik:RadSplitContainer>
+            <telerik:RadPaneGroup SelectedIndex="{Binding SelectedDocumentPaneIndex, Mode=TwoWay}"  ItemsSource="{Binding DocumentPanes}"/>
+         </telerik:RadSplitContainer>
+      </telerik:RadDocking.DocumentHost>
+
+      <telerik:RadSplitContainer InitialPosition="DockedRight">
+         <telerik:RadPaneGroup SelectedIndex="{Binding SelectedPropertyPaneIndex, Mode=TwoWay}" ItemsSource="{Binding PropertyPanes}"/>
+      </telerik:RadSplitContainer>
+
+      <telerik:RadSplitContainer InitialPosition="DockedBottom">
+         <telerik:RadPaneGroup>
+            <telerik:RadPane Header="Log" CanUserClose="false">
+               <local:LogViewer/>
+            </telerik:RadPane>
+         </telerik:RadPaneGroup>
+      </telerik:RadSplitContainer>
+   </telerik:RadDocking>
+</UserControl>

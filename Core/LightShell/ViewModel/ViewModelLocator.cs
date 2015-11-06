@@ -41,6 +41,14 @@ namespace LightShell.ViewModel
          }
       }
 
+      public DockingAreaViewModel DockingArea
+      {
+         get
+         {
+            return IocContainer.Resolve<DockingAreaViewModel>();
+         }
+      }
+
       public static void Cleanup()
       {
          // TODO Clear the ViewModels

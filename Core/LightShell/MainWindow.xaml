@@ -24,50 +24,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
          </Grid.RowDefinitions>
-         <Grid.Resources>
-            <DataTemplate x:Key="ButtonTemplate">
-               <telerik:RadRibbonButton Text="{Binding Label}" LargeImage="{Binding Icon}" Command="{Binding OnClick}"
-                                        Size="Large" CommandParameter="{Binding .}"/>
-            </DataTemplate>
+         <controls:RibbonMenu />
 
-            <HierarchicalDataTemplate x:Key="GroupTemplate"
-                                      ItemsSource='{Binding Buttons}'
-                                      ItemTemplate='{StaticResource ButtonTemplate}'>
-               <TextBlock Text='{Binding GroupName}' />
-            </HierarchicalDataTemplate>
-
-            <HierarchicalDataTemplate x:Key="TabTemplate"
-                                      ItemsSource='{Binding Groups}'
-                                      ItemTemplate='{StaticResource GroupTemplate}'>
-               <TextBlock Text='{Binding Title}' />
-            </HierarchicalDataTemplate>
-         </Grid.Resources>
-
-         <telerik:RadRibbonView ApplicationButtonVisibility="Collapsed" TitleBarVisibility="Collapsed"
-                                DataContext="{Binding Source={StaticResource Locator}, Path=MenuBar}"
-                                ItemTemplate="{StaticResource TabTemplate}" ItemsSource="{Binding MenuTabs}"
-                                SelectedItem="{Binding SelectedTab, Mode=TwoWay}">
-         </telerik:RadRibbonView>
-
-         <telerik:RadDocking Grid.Row="1" PreviewClose="PaneClosePreview">
-            <telerik:RadDocking.DocumentHost>
-               <telerik:RadSplitContainer>
-                  <telerik:RadPaneGroup SelectedIndex="{Binding SelectedDocumentPaneIndex, Mode=TwoWay}"  ItemsSource="{Binding DocumentPanes}"/>
-               </telerik:RadSplitContainer>
-            </telerik:RadDocking.DocumentHost>
-
-            <telerik:RadSplitContainer InitialPosition="DockedRight">
-               <telerik:RadPaneGroup SelectedIndex="{Binding SelectedPropertyPaneIndex, Mode=TwoWay}" ItemsSource="{Binding PropertyPanes}"/>
-            </telerik:RadSplitContainer>
-
-            <telerik:RadSplitContainer InitialPosition="DockedBottom">
-               <telerik:RadPaneGroup>
-                  <telerik:RadPane Header="Log" CanUserClose="false">
-                     <controls:LogViewer/>
-                  </telerik:RadPane>
-               </telerik:RadPaneGroup>
-            </telerik:RadSplitContainer>
-         </telerik:RadDocking>
+         <controls:DockingArea Grid.Row="1"/>
       </Grid>
    </telerik:RadBusyIndicator>
 </Window>
